@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="dark-theme">
+  <div class="wrap">
+    <div class="title">
+      <h1>TODO</h1>
+      <span></span>
+    </div>  
+    
+    <div class="new-item">
+      <span></span>
+      <input type="text" placeholder="Create a new todo"></input>
+    </div>
+
+    <section class="content">
+      <ul>
+        <li><span></span>
+          <input type="checkbox" name="list-item" checked>
+          <label class="list-item">Complete online JavaScript course</label>
+        </li>
+        <li><span></span>
+          <input type="checkbox" name="list-item">
+          <label class="list-item">Jog around the park 3x</label>
+        </li>
+        <li><span></span>
+          <input type="checkbox" name="list-item">
+          <label class="list-item">10 minutes meditation</label>
+        </li>
+        <li><span></span>
+          <input type="checkbox" name="list-item">
+          <label class="list-item">Read for 1 hour</label>
+        </li>
+        <li><span></span>
+          <input type="checkbox" name="list-item">
+          <label class="list-item">Pick up groceries</label>
+        </li>
+        <li><span></span>
+          <input type="checkbox" name="list-item">
+          <label class="list-item">Complete Todo App on Frontend Mentor</label>
+        </li>
+      </ul>
+    </section>
+
+
+    <div class="bottom">
+    <p><!-- Add dynamic number --> items left</p>
+
+      <div class="filter">
+      <input type="radio" name="filter" id="all" checked>
+      <label>All</label>
+      <input type="radio" name="filter" id="active">
+      <label>Active</label> 
+      <input type="radio" name="filter" id="completed">
+      <label>Completed</label>
+
+      <!-- <button> Clear Completed </button> -->
+    </div>
+    <div class="instructions">
+      <p>Drag and drop to reorder list</p>
+    </div>  
+  </div>
+</body>
+</html>
