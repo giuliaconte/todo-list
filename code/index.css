@@ -6,7 +6,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
-.dark-theme {
+body {
     font-family: "Josephin Sans", sans-serif;
     font-size: 20px;
     background-color: hsl(235, 21%, 11%);
@@ -24,7 +24,7 @@
     width: 40vw;
     height: 100vh;
     padding: 5rem;
-    color: white;
+    color: hsl(234, 39%, 85%);
     font-size: 16px;
     display: flex;
     flex-direction: column;
@@ -39,9 +39,10 @@
     font-size: 22px;
     letter-spacing: 12px;
     padding-bottom: 30px;
+    color: white;
 }
 
-.title span {
+.tgl {
     background-image: url("../images/icon-sun.svg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -70,57 +71,77 @@
     /* margin-top: 20px; */
 }
 
-.new-item span {
+.circle {
     border: 2px solid hsl(233, 14%, 35%);
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    display: inline-block;
-    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 }
 
-ul {
-    list-style-type: none;
+form {
     font-size: 18px;
     padding: 40px 0 40px;
     font-family: inherit;
     font-size: 20px;
     font-weight: 400;
     width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     /* transform: translateX(-5%) */
 }
 
-li {
-    border-bottom: solid 1px darkgrey;
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form label {
+    border-bottom: solid 1px hsl(234, 39%, 85%);
     height: 6vh;
     width: 35vw;
     background-color: hsl(235, 24%, 19%);
     border-radius: 5px;
     padding: 15px 10px 10px 15px;
+    position: relative;
     display: flex;
     align-items: center;
 }
 
-ul li input[type="checkbox"] {
+form input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    width: 0;
     height: 0;
+    width: 0;
+    /*  margin: 10px;
+    background-color: hsl(235, 24%, 19%); */
 }
 
-ul span {
+.checkmark {
+    display: inline-block;
+    position: relative;
     border: 2px solid hsl(233, 14%, 35%);
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    display: inline-block; 
+    background-color: hsl(235, 24%, 19%);
+    margin: 10px;
 }
 
-ul li label {
-    position: relative;
-    margin-left: 30px;
+form input:checked ~ .checkmark {
+    background-image: url(../images/icon-check.svg);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50%;
 }
+
 
 .bottom {
     color: hsl(233, 14%, 35%);
@@ -135,9 +156,27 @@ ul li label {
     color: hsl(236, 33%, 92%);
 }
 
+.bottom label:active {
+    color: hsl(220, 98%, 61%);
+}
+
+.bottom button {
+    background: none;
+    border: none;
+    color:hsl(233, 14%, 35%)
+}
+
+.bottom button:hover {
+    color: hsl(236, 33%, 92%)
+}
 
 
-.light-theme {
+
+
+
+
+
+.light {
     font-family: "Josephin Sans", sans-serif;
     font-size: 20px;
     background-color: hsl(236, 33%, 92%);
@@ -151,45 +190,54 @@ ul li label {
     align-items: center;
 }
 
-.light-theme .wrap {
+.light .wrap {
     color: black;
 }
 
-.light-theme .title span {
+.light .tgl {
     background-image: url("../images/icon-moon.svg");
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.light-theme .bottom {
-    color: hsl(236, 9%, 61%)
+.light .bottom {
+    color: hsl(236, 9%, 61%);
 }
 
-.light-theme .bottom label:hover {
+.light .bottom button {
+    color: hsl(236, 9%, 61%);
+}
+
+.light .bottom button:hover {
     color: black;
 }
 
-.light-theme .new-item {
+.light .bottom label:hover {
+    color: black;
+}
+
+.light .new-item {
     background-color: hsl(0, 0%, 98%);
 }
 
-.light-theme .new-item input {
+.light .new-item input {
     color: hsl(235, 19%, 35%)
 }
 
-.light-theme ul li {
+.light form label {
     background-color: hsl(0, 0%, 98%);
     color: hsl(235, 19%, 35%);
 }
 
-.light-theme .title {
+.light .title {
     color: white;
 }
 
-.light-theme .new-item span {
+.light .circle {
     border: 2px solid hsl(233, 11%, 84%);
 }
 
-.light-theme ul li span {
-    border: 2px solid hsl(233, 11%, 84%);;
+.light .checkmark {
+    border: 2px solid hsl(233, 11%, 84%);
+    background-color: hsl(0, 0%, 98%);
 }

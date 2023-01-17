@@ -10,45 +10,43 @@
   <link rel="stylesheet" href="index.css">
 </head>
 
-<body class="dark-theme">
+<body>
   <div class="wrap">
     <div class="title">
       <h1>TODO</h1>
-      <span></span>
+      <div onclick="changeTheme()" class="tgl">
+      </div>
     </div>  
     
     <div class="new-item">
-      <span></span>
+      <div class="circle"></div>
       <input type="text" placeholder="Create a new todo" id="newTodo"></input>
     </div>
 
     <section class="content">
-      <ul>
-        <li><span></span>
-          <input type="checkbox" name="list-item" checked>
-          <label class="list-item" id="listItem">Complete online JavaScript course</label>
-        </li>
-        <li><span></span>
-          <input type="checkbox" name="list-item">
-          <label class="list-item" id="listItem">Jog around the park 3x</label>
-        </li>
-        <li><span></span>
-          <input type="checkbox" name="list-item">
-          <label class="list-item" id="listItem">10 minutes meditation</label>
-        </li>
-        <li><span></span>
-          <input type="checkbox" name="list-item">
-          <label class="list-item" id="listItem">Read for 1 hour</label>
-        </li>
-        <li><span></span>
-          <input type="checkbox" name="list-item">
-          <label class="list-item" id="listItem">Pick up groceries</label>
-        </li>
-        <li><span></span>
-          <input type="checkbox" name="list-item">
-          <label class="list-item" id="listItem">Complete Todo App on Frontend Mentor</label>
-        </li>
-      </ul>
+      <form>
+          <label class="list-item" id="listItem">
+            <input type="checkbox" name="list-item" class="radio" checked> <span class="checkmark"> </span>
+            Complete online JavaScript course
+          </label>
+          <label class="list-item" id="listItem">
+            <input type="checkbox" name="list-item" class="radio">  <span class="checkmark"></span>  
+            Jog around the park 3x
+          </label>
+          <label class="list-item" id="listItem">
+              <input type="checkbox" name="list-item" class="radio"> <span class="checkmark"></span>
+              10 minutes meditation
+          </label>
+          <label class="list-item" id="listItem">
+              <input type="checkbox" name="list-item" class="radio"><span class="checkmark"></span>    
+              Read for 1 hour
+            </label>
+          <label class="list-item" id="listItem">
+            <input type="checkbox" name="list-item" class="radio"><span class="checkmark"></span>
+            Pick up groceries
+          </label>
+          
+      </form>
     </section>
 
 
@@ -63,11 +61,13 @@
       <input type="radio" name="filter" id="completed">
       <label>Completed</label>
 
-      <!-- <button> Clear Completed </button> -->
+      <button> Clear Completed </button>
     </div>
     <div class="instructions">
       <p>Drag and drop to reorder list</p>
     </div>  
   </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
