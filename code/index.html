@@ -19,13 +19,13 @@
     </div>  
     
     <div class="new-item">
-      <div class="circle"></div>
+      <div class="circle" onclick="addItem()"></div>
       <input type="text" placeholder="Create a new todo" id="newTodo"></input>
     </div>
 
     <section class="content">
-      <form>
-          <label class="list-item" id="listItem">
+      <form id="list">
+          <label class="list-item" id="listItem" >
             <input type="checkbox" name="list-item" class="radio" checked> <span class="checkmark"> </span>
             Complete online JavaScript course
           </label>

@@ -143,6 +143,15 @@ form input:checked ~ .checkmark {
 }
 
 
+
+
+/* form input:checked + label {
+    text-decoration: line-through;
+} */
+
+
+
+
 .bottom {
     color: hsl(233, 14%, 35%);
     font-size: 16px;
