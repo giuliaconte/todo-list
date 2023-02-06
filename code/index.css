@@ -82,6 +82,15 @@ body {
     margin: 10px;
 }
 
+.alert {
+    color: #002699;
+    background-color: hsl(234, 39%, 85%);
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    padding-top: 8px;
+}
+
 form {
     font-size: 18px;
     padding: 40px 0 40px;

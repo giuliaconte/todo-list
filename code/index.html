@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Todo app</title>
@@ -19,29 +18,30 @@
     </div>  
     
     <div class="new-item">
-      <div class="circle" onclick="addItem()"></div>
-      <input type="text" placeholder="Create a new todo" id="newTodo"></input>
+      <div class="circle"></div>
+      <input type="text" placeholder="Create a new todo" id="new-todo" required="true"></input>
+      <p class="alert"></p>
     </div>
 
     <section class="content">
       <form id="list">
-          <label class="list-item" id="listItem" >
+          <label class="list-item" id="listItem" draggable="true">
             <input type="checkbox" name="list-item" class="radio" checked> <span class="checkmark"> </span>
             Complete online JavaScript course
           </label>
-          <label class="list-item" id="listItem">
+          <label class="list-item" id="listItem" draggable="true">
             <input type="checkbox" name="list-item" class="radio">  <span class="checkmark"></span>  
             Jog around the park 3x
           </label>
-          <label class="list-item" id="listItem">
+          <label class="list-item" id="listItem" draggable="true">
               <input type="checkbox" name="list-item" class="radio"> <span class="checkmark"></span>
               10 minutes meditation
           </label>
-          <label class="list-item" id="listItem">
+          <label class="list-item" id="listItem" draggable="true">
               <input type="checkbox" name="list-item" class="radio"><span class="checkmark"></span>    
               Read for 1 hour
             </label>
-          <label class="list-item" id="listItem">
+          <label class="list-item" id="listItem" draggable="true">
             <input type="checkbox" name="list-item" class="radio"><span class="checkmark"></span>
             Pick up groceries
           </label>
