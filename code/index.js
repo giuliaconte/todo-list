@@ -1,13 +1,20 @@
 // selecting items 
 const alert = document.querySelector(".alert"),
-list = document.querySelector(".list"),
-listItem = document.getElementById("listItem"),
-content = document.querySelector(".content"),
-checkmark = document.querySelectorAll(".checkmark"),
-newTodo = document.getElementById("new-todo");
-const input = document.querySelector('input');
-input.addEventListener("keypress", addItem);
+    list = document.querySelector(".list"),
+    listItem = document.getElementById("listItem"),
+    content = document.querySelector(".content"),
+    checkmark = document.querySelectorAll(".checkmark"),
+    newTodo = document.getElementById("new-todo"),
+    input = document.querySelector('input'),
+    filterAll = document.getElementById("all"),
+    filterActive = document.getElementById("active"),
+    filterCompleted = document.getElementById("completed"),
+    clearCompleted = document.querySelector(".clear-completed");
 
+//event listeners
+// window.addEventListener("DOMContentLoaded", setupItems); does not work?? 
+input.addEventListener("keypress", addItem);
+// clearCompleted.addEventListener("keypress", clearItems);
 
 // dark theme - light theme
 function changeTheme() {
@@ -37,19 +44,26 @@ document.body.classList.toggle("light")
 // add new item to the list
 function addItem(e) {
 
-if(newTodo.value.length == 0 && e.key === "Enter") {
+if (newTodo.value.length == 0 && e.key === "Enter") {
     alert.textContent = "Please enter value";
     setTimeout(function () {
         alert.textContent = "";
         }, 3000);
-}else if (e.key === "Enter"){
+} else if (e.key === "Enter"){
     document.getElementById("list").innerHTML += 
     `
     <label class="list-item" id="listItem" draggable="true">
     <input type="checkbox" name="list-item" class="radio"> <span class="checkmark"> </span>
     ${e.target.value}
+    <div class="delete"><button type="button" class="delete-btn"></button></div>
     </label>
     `
     newTodo.value = ''; // reset the new todo input to empty string 
 }}
 
+// delete button
+const deleteBtn = document.querySelectorAll(".delete")
+deleteBtn.addEventListener("click", deleteItem) 
+function deleteItem () {
+    list.removeChild(listItem)
+}
