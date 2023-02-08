@@ -21,6 +21,14 @@ function changeTheme() {
 document.body.classList.toggle("light")
 }
 
+// Add eventlisteners to inital delete buttons
+const deleteBtns = document.getElementsByClassName("delete") // This gets all the elements with the "delete" class and stores it into an 'HTMLCollection'
+console.log(deleteBtns);
+
+Array.from(deleteBtns).forEach(function(element) { // This first creates an array from the HTMLCollection so i can use methods on it, loops over the array and says "For Each element in this array, add a 'click' eventListener" to make sure that all the delete buttons have it
+    element.addEventListener('click', deleteItem);
+  });
+
 // technique i used before but not good anymore
 // function addItem() { 
 //i call this function on the circle class on the HTML, so that when the circle is clicked this happens
@@ -59,18 +67,26 @@ if (newTodo.value.length == 0 && e.key === "Enter") {
     </label>
     `
     newTodo.value = ''; // reset the new todo input to empty string 
-    newTodo.setAttribute('class', "delete")
-}}
 
-// delete button
-const deleteBtns = document.getElementsByClassName("delete") // This gets all the elements with the "delete" class and stores it into an 'HTMLCollection'
-console.log(deleteBtns);
+    // Fkn do it again so it includes the one that was just created.
+    const deleteBtns = document.getElementsByClassName("delete") // This gets all the elements with the "delete" class and stores it into an 'HTMLCollection'
 
-Array.from(deleteBtns).forEach(function(element) { // This first creates an array from the HTMLCollection so i can use methods on it, loops over the array and says "For Each element in this array, add a 'click' eventListener" to make sure that all the delete buttons have it
+    Array.from(deleteBtns).forEach(function(element) { // This first creates an array from the HTMLCollection so i can use methods on it, loops over the array and says "For Each element in this array, add a 'click' eventListener" to make sure that all the delete buttons have it
     element.addEventListener('click', deleteItem);
   });
+}}
+
+
 
 function deleteItem (e) {
-    console.log("ehfcjkeshf")
     e.target.parentNode.parentNode.remove() // this gets the parent element of the element you click, so; <div class="delete">. Then goes up one layer again to the <label> then removes the selected <label> Node with remove()
 }
+
+
+// TEst ?
+// *click* nice 
+// code messy as fuck but it works xD
+// SOMEBODY CODED SPAGHETT xDDDD 
+// pls eggsplain why code is two times 
+// Yeah, exactly. So first, this stuff at the bottom, runs when page loads. So it adds the deleteItem function with the event listener. BUT when we create new item it breaks
+// So now, when new item is created. We just do it again XD This makes sure the new one also has the event listener
