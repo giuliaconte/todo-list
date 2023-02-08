@@ -59,11 +59,18 @@ if (newTodo.value.length == 0 && e.key === "Enter") {
     </label>
     `
     newTodo.value = ''; // reset the new todo input to empty string 
+    newTodo.setAttribute('class', "delete")
 }}
 
 // delete button
-const deleteBtn = document.querySelectorAll(".delete")
-deleteBtn.addEventListener("click", deleteItem) 
-function deleteItem () {
-    list.removeChild(listItem)
+const deleteBtns = document.getElementsByClassName("delete") // This gets all the elements with the "delete" class and stores it into an 'HTMLCollection'
+console.log(deleteBtns);
+
+Array.from(deleteBtns).forEach(function(element) { // This first creates an array from the HTMLCollection so i can use methods on it, loops over the array and says "For Each element in this array, add a 'click' eventListener" to make sure that all the delete buttons have it
+    element.addEventListener('click', deleteItem);
+  });
+
+function deleteItem (e) {
+    console.log("ehfcjkeshf")
+    e.target.parentNode.parentNode.remove() // this gets the parent element of the element you click, so; <div class="delete">. Then goes up one layer again to the <label> then removes the selected <label> Node with remove()
 }
