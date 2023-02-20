@@ -3,13 +3,15 @@ const alert = document.querySelector(".alert"),
     list = document.querySelector(".list"),
     listItem = document.getElementById("listItem"),
     content = document.querySelector(".content"),
-    checkmark = document.querySelectorAll(".checkmark"),
+    checkbox = document.querySelectorAll(".checkmark"),
     newTodo = document.getElementById("new-todo"),
     input = document.querySelector('input'),
     filterAll = document.getElementById("all"),
     filterActive = document.getElementById("active"),
     filterCompleted = document.getElementById("completed"),
-    clearCompleted = document.querySelector(".clear-completed");
+    clearCompleted = document.querySelector(".clear-completed"),
+    itemsLeft = document.querySelector(".items-left");
+    
 
 //event listeners
 // window.addEventListener("DOMContentLoaded", setupItems); does not work?? 
@@ -68,7 +70,7 @@ if (newTodo.value.length == 0 && e.key === "Enter") {
     `
     newTodo.value = ''; // reset the new todo input to empty string 
 
-    // Fkn do it again so it includes the one that was just created.
+    // do it again so it includes the one that was just created.
     const deleteBtns = document.getElementsByClassName("delete") // This gets all the elements with the "delete" class and stores it into an 'HTMLCollection'
 
     Array.from(deleteBtns).forEach(function(element) { // This first creates an array from the HTMLCollection so i can use methods on it, loops over the array and says "For Each element in this array, add a 'click' eventListener" to make sure that all the delete buttons have it
@@ -76,17 +78,28 @@ if (newTodo.value.length == 0 && e.key === "Enter") {
   });
 }}
 
-
-
+// delete function 
 function deleteItem (e) {
     e.target.parentNode.parentNode.remove() // this gets the parent element of the element you click, so; <div class="delete">. Then goes up one layer again to the <label> then removes the selected <label> Node with remove()
 }
 
 
-// TEst ?
-// *click* nice 
-// code messy as fuck but it works xD
-// SOMEBODY CODED SPAGHETT xDDDD 
-// pls eggsplain why code is two times 
-// Yeah, exactly. So first, this stuff at the bottom, runs when page loads. So it adds the deleteItem function with the event listener. BUT when we create new item it breaks
-// So now, when new item is created. We just do it again XD This makes sure the new one also has the event listener
+// function setCompleted () {
+//     if (checkbox.checked == true) {
+//         // checkmark.setAttribute("checked", true)
+//         document.getElementsByClassName("list-item").style.textDecoration= "line-through";
+//         console.log(checkbox.checked);
+//         console.log("madonna puttana");
+
+//     }
+// }
+// document.getElementsByClassName("list-item")
+// // .style.textDecoration= "line-through";
+
+console.log(checkbox)
+// set checked as completed 
+checkbox.forEach( checkbox => {
+    checkbox.addEventListener("click", function() {
+        checkbox.parentElement.classList.toggle("crossed")
+    })
+})

@@ -124,6 +124,10 @@ form label {
     text-transform: capitalize;
 }
 
+.crossed {
+    text-decoration: line-through;
+}
+
 form input {
     position: absolute;
     opacity: 0;
