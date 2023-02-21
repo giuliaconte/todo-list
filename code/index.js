@@ -5,13 +5,13 @@ const alert = document.querySelector(".alert"),
     content = document.querySelector(".content"),
     checkbox = document.querySelectorAll(".checkmark"),
     newTodo = document.getElementById("new-todo"),
-    input = document.querySelector('input'),
     filterAll = document.getElementById("all"),
     filterActive = document.getElementById("active"),
     filterCompleted = document.getElementById("completed"),
-    clearCompleted = document.querySelector(".clear-completed"),
-    itemsLeft = document.querySelector(".items-left");
-    
+    clearCompleted = document.querySelector(".clear-completed")
+    // itemsLeft = document.querySelector(".items-left");
+const input = document.querySelector('input')
+
 
 //event listeners
 // window.addEventListener("DOMContentLoaded", setupItems); does not work?? 
@@ -84,22 +84,23 @@ function deleteItem (e) {
 }
 
 
-// function setCompleted () {
-//     if (checkbox.checked == true) {
-//         // checkmark.setAttribute("checked", true)
-//         document.getElementsByClassName("list-item").style.textDecoration= "line-through";
-//         console.log(checkbox.checked);
-//         console.log("madonna puttana");
-
-//     }
-// }
-// document.getElementsByClassName("list-item")
-// // .style.textDecoration= "line-through";
-
-console.log(checkbox)
-// set checked as completed 
+// set checked as crossed 
 checkbox.forEach( checkbox => {
     checkbox.addEventListener("click", function() {
         checkbox.parentElement.classList.toggle("crossed")
     })
 })
+// have to use forEach because it is a nodeList
+
+
+// items left numbers
+
+const form = document.querySelector('form')
+const inputs = form.querySelectorAll('.radio')
+const itemsLeft = Array.from(inputs).filter((t) => t.checked === false).length
+console.log(itemsLeft)
+// have to use Array.from because it is a nodeList
+
+document.getElementsByClassName("items-left").textContent = `${itemsLeft}`
+console.log(document.getElementsByClassName("items-left"))
+// why this poopy does not show up 
