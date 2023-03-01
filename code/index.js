@@ -95,12 +95,12 @@ checkbox.forEach( checkbox => {
 
 // items left numbers
 
-const form = document.querySelector('form')
-const inputs = form.querySelectorAll('.radio')
-const itemsLeft = Array.from(inputs).filter((t) => t.checked === false).length
-console.log(itemsLeft)
+// const form = document.querySelector('form')
+// const inputs = form.querySelectorAll('.radio')
+// const itemsLeft = Array.from(inputs).filter((t) => t.checked === false).length
+// console.log(itemsLeft)
 // have to use Array.from because it is a nodeList
 
-document.getElementsByClassName("items-left").textContent = `${itemsLeft}`
-console.log(document.getElementsByClassName("items-left"))
-// why this poopy does not show up 
+
+// document.getElementsByClassName("items-left").textContent = `${itemsLeft}`
+// console.log(document.getElementsByClassName("items-left"))
