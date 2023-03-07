@@ -7,12 +7,10 @@ const alert = document.querySelector(".alert"),
 	filterAll = document.getElementById("all"),
 	filterActive = document.getElementById("active"),
 	filterCompleted = document.getElementById("completed"),
-	clearCompleted = document.querySelector(".clear-completed")
-// itemsLeft = document.querySelector(".items-left");
+	clearCompleted = document.querySelector(".clear-completed");
 const input = document.querySelector('input')
 
 //event listeners
-// window.addEventListener("DOMContentLoaded", setupItems); does not work?? 
 input.addEventListener("keypress", todoKeyHandler);
 // clearCompleted.addEventListener("keypress", clearItems);
 
@@ -22,10 +20,6 @@ function changeTheme() {
 }
 // have to use forEach because it is a nodeList
 
-// technique i used before but not good anymore
-
-
-let todos = []
 
 // add a todo entry
 function addEntry(entry) {
@@ -90,18 +84,49 @@ onload = () => {
 
 // items left number
 
-function showItemsLeft () {
-    const count = list.filter(todo => !todo.completed).length
-    document.getElementById("items-left").innerHTML = count
+function countEntries() {
+	const entryLabels = document.querySelectorAll('.list-item');
+	return entryLabels.length;
+  }
 
-    // const itemsLeft = Array.from(todos).filter((t) => t.checked === false).length
-    // // have to use Array.from because it is a nodeList
-    // console.log(itemsLeft)
-    // document.getElementById("items-left").innerHTML = itemsLeft
-}
-showItemsLeft();
+  const numEntries = countEntries();
+console.log(`Number of entries: ${numEntries}`);
 
-// console.log(document.getElementsByClassName("items-left"))
+  
 
-// i changed the "click" event listener to "change" because apparently there is some "Order of Execution" sillyness where in case of 'click' it would grab it before the checkbox change had gone through
+// function showItemsLeft () {
+//     const count = list.filter(label => !label.crossed).length
+//     document.getElementById("items-left").innerHTML = count
+// 	console.log(count)
+// }
+// showItemsLeft()
 
+//     const itemsLeft = Array.from(todos).filter((t) => t.checked === false).length
+//     // // have to use Array.from because it is a nodeList
+//     // console.log(itemsLeft)
+//     // document.getElementById("items-left").innerHTML = itemsLeft
+// }
+// showItemsLeft();
+
+// function filterTodo(e) {
+// 	const entries = list.childNodes;
+// 	for(let i = 1; i<entries.length; i++ ){
+// 	switch (e.target.value) {
+// 	case "all":
+// 	entries[i].style.display = "flex";
+// 	break;
+// 	case "completed":
+// 	if (entries[i].classList.contains('crossed')) {
+// 	entries[i].style.display = "flex";
+// 	} else {
+// 	entries[i].style.display = "none";
+// 	}
+// 	break;
+// 	case "uncompleted":
+// 	if (!entries[i].classList.contains('crossed')) {
+// 	entries[i].style.display = "flex";
+// 	} else {
+// 	entries[i].style.display = "none";
+// 	}
+// 	break;
+// 	}}}
