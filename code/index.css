@@ -214,6 +214,13 @@ label:hover .delete-btn {
     color: hsl(236, 33%, 92%)
 }
 
+.list-item.dragging {
+    opacity: 0.5;
+  }
+  .list-item.drag-over {
+    border-bottom: 2px dashed #ccc;
+  }
+
 
 
 

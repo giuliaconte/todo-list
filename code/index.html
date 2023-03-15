@@ -2,36 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Todo app</title>
   <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
   <div class="wrap">
     <div class="title">
       <h1>TODO</h1>
       <div onclick="changeTheme()" class="tgl">
       </div>
-    </div>  
-    
+    </div>
     <div class="new-item" >
       <div class="circle"></div>
       <input type="text" placeholder="Create a new todo" id="new-todo" required="true"></input>
       <p class="alert"></p>
     </div>
-
     <section class="content">
       <form id="list">
           <!-- <label class="list-item crossed" id="listItem" draggable="true">
             <input type="checkbox" name="input-check" class="radio" checked> <span class="checkmark"> </span>
             Complete online JavaScript course <div class="delete"><button type="button" class="delete-btn"></button></div>
-          </label>
-          <label class="list-item" id="listItem" draggable="true">
-            <input type="checkbox" name="input-check" class="radio">  <span class="checkmark"></span>  
-            Jog around the park 3x <div class="delete"><button type="button" class="delete-btn"></button></div>
           </label>
           <label class="list-item" id="listItem" draggable="true">
               <input type="checkbox" name="input-check" class="radio"> <span class="checkmark"></span>
@@ -40,26 +32,21 @@
            -->
       </form>
     </section>
-
-
     <div class="bottom">
     <p> <span class="items-left" id="items-left"> <!-- Add dynamic number -->  </span> items left</p>
-
-      <div class="filter">
-      <input type="radio" name="filter" id="all" checked>
+    <div class="filter">
+      <input type="radio" name="filter" id="all" checked onclick="updateCounts('all')">
       <label>All</label>
-      <input type="radio" name="filter" id="active">
-      <label>Active</label> 
-      <input type="radio" name="filter" id="completed">
+      <input type="radio" name="filter" id="active" onclick="updateCounts('active')">
+      <label>Active</label>
+      <input type="radio" name="filter" id="completed" onclick="updateCounts('completed')">
       <label>Completed</label>
-
-      <button class="clear-completed"> Clear Completed </button>
+      <button class="clear-completed" onclick="clearCompleted()"> Clear Completed </button>
     </div>
     <div class="instructions">
       <p>Drag and drop to reorder list</p>
-    </div>  
+    </div>
   </div>
-
   <script src="index.js"></script>
 </body>
 </html>
