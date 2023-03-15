@@ -12,6 +12,12 @@ let completedCount = 0;
 let nonCompletedCount = 0;
 
 
+// dark theme - light theme
+function changeTheme() {
+	document.body.classList.toggle("light")
+}
+
+
 // add a todo entry
 function addEntry(entry) {
 const listItem = document.createElement("div");
